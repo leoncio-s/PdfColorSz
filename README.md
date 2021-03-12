@@ -2,7 +2,7 @@ Scriptt para retornar cor e tamanho de arquivos pdf.
 
 # Requesitos:
 
-poppler-utils:  0.86.*
+poppler-utils:  0.86.* \n
 ghostscript:    9.50
 
 
