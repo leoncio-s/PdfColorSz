@@ -1,0 +1,15 @@
+{   
+    "authors": [
+        {
+            "name": "Leôncio souza",
+            "homepage": "https://github.com/leoncio-s/",
+            "role": "Developer"
+        }
+    ],
+    "name": "leoncio-s/pdfcolorsz",
+    "type": "library",
+    "description": "Get pdf page size and color",
+    "keywords": ["pdf", "pdf color", "pdf size"],
+    "version": "1.1.0",
+    "license": ["proprietary", "GNU 2.0"]
+}
