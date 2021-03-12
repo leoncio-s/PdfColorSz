@@ -1,4 +1,4 @@
-Script para retornar cor e tamanho de arquivos pdf.
+Este códido tem como objetivo analisar arquivos pdf e retornar a cor do seu conteúdo e tamanho.
 
 # Requesitos:
 
