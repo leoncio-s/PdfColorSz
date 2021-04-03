@@ -8,5 +8,5 @@ ghostscript:    9.50
 
 # Como usar:
 
-    $get = new ColorSz("file.pdf");     
+    $pdf = new ColorSz("file.pdf");     
     $values = json_decode($pdf->values);
