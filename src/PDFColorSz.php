@@ -1,34 +1,30 @@
 <?php
-    $__meta=[
-        "Author" => "Leôncio Souza",
-        "Version" => "1.2",
-        "Name" => 'PdfColorSz'
-    ];
 
 class PDFColorSz
 {
-    protected $pdf;
+    private $pdf;
     
-    public $values;
+    private $values;
     
-    public static $binPdfInfo;
+    private static $binPdfInfo;
 
-    public static $binGs;
+    private static $binGs;
 
-    public function __construct($file)
+    public function __construct(string $file)
     {
         $ext = explode(".", $file)[2];
 
         if($ext === "pdf" || $ext === "Pdf" || $ext === "PDF" )
         {
             $this->pdf = $file;
-            $this->get();
+            $this->values = $this->run();
         } else {
             throw new Exception("$file não é um arquivo valido");
         }
     }
 
-    public function getBinaryPdfInfo()
+    // pega o binário do pdfinfo
+    private function getBinaryPdfInfo()
     {
         if (empty(static::$binPdfInfo))
         {
@@ -38,7 +34,8 @@ class PDFColorSz
         return static::$binPdfInfo;
     }
 
-    public function getBinaryGs()
+    // pega o binário do ghostscript
+    private function getBinaryGs()
     {
         if (empty(static::$binGs))
         {
@@ -48,7 +45,8 @@ class PDFColorSz
         return static::$binGs;
     }
 
-    public function get()
+    // processa o arquivo e retorna os valores
+    private function run() : array
     {
         (object) $data=array();
         $cmdGs = escapeshellarg($this->getBinaryGs());
@@ -117,7 +115,12 @@ class PDFColorSz
             $x++;
         }
 
-        return $this->values = json_encode($data);
+        return $data;
+    }
+    
+    // retorna os resultados
+    public function getValues() : array {
+        return $this->value;
     }
 }
 ?>
