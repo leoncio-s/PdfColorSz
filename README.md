@@ -13,4 +13,4 @@ ghostscript:    9.50
     
     require_once("PDFColorSZ");
     $pdf = new PDFColorSz("file.pdf");     
-    $values = json_decode($pdf->values);
+    $values = $pdf->getValues();
